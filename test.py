@@ -24,7 +24,6 @@ while True:
     page = page_soup.get_text()
     if debug is True:
         print(page_soup)
-        print(page_soup.get_text())
     if "incapsula" in page:
         print(Fore.RED, "incapsula block :(")
         print(page_soup)
@@ -40,3 +39,5 @@ while True:
 # fix formatting of the available/not available text
 # clean code
 # some other things i probably forgot
+# make requirements.txt
+# explain why using BS in the readme
