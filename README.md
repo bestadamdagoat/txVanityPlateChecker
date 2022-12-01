@@ -13,18 +13,17 @@ Basically what this bot does is:
 - Checks if the plate is taken, available, or if you're being blocked by incapsula.
 
 ## NOTES: 
-- The default query.txt file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing.
+- The default `query.txt` file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing.
 
 - On the dev branch, debug mode is enabled by default.
 
 - The default checklink is for the Classic Black Silver plate, which supports up to 7 characters.
 
-- The default wait time is 3 seconds. Set it to whatever you want.
+- The default wait time is 3 seconds. Set it to whatever you want in `config.ini` by editing `sleeptime`.
 
 ## UPCOMING FEATURES:
 NOTE: If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 
 
-- Make settings configured by a config file https://github.com/bestadamdagoat/txVanityPlateChecker/issues/4
 - Make code cleaner https://github.com/bestadamdagoat/txVanityPlateChecker/issues/3
 - Fix formatting of the console log https://github.com/bestadamdagoat/txVanityPlateChecker/issues/2
 
@@ -37,7 +36,9 @@ NOTE: Make sure you are using Python 3.
 3. Go into the terminal and type `pip install -r requirements.txt`
 4. Edit the query.txt file to your liking
      - Make sure to separate all the plates by new lines. Also make sure all the queries fit the plate requirements.
-5. You are now ready to run the bot!
+5. Edit the config.ini file to your liking
+   - Make sure you keep sleeptime in seconds and debug in true/false
+6. You are now ready to run the bot!
 
 ## COMMON ISSUES + FIXES
 NOTE: This will not always be up-to-date, and I will not add uncommon issues to this list. If you want an up-to-date list of fixes, click [here](https://github.com/bestadamdagoat/txVanityPlateBot/issues?q=is%3Aissue+is%3Aclosed).
