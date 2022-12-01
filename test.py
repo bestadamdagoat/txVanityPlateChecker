@@ -6,6 +6,7 @@ import time
 init(autoreset=True)
 checkurl = 'https://www.myplates.com/api/licenseplates/passenger/classic-black-silver/'
 queryfile = open('query.txt')
+# debug mode, set it to either true or false
 debug = True
 
 while True:
@@ -33,11 +34,7 @@ while True:
             print(Fore.RED + query + "is not available")
         else:
             print(Fore.GREEN + query + "is available")
+    # wait time to check if a plate is available, set it to whatever you want (in seconds)
     time.sleep(3)
-
-# TO DO
-# fix formatting of the available/not available text
-# clean code
-# some other things i probably forgot
-# make requirements.txt
 # explain why using BS in the readme
+# change test.py to main.py

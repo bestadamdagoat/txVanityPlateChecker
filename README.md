@@ -13,16 +13,20 @@ Basically what this bot does is:
 - Checks if the plate is taken, available, or if you're being blocked by incapsula.
 
 ## NOTES: 
-The default query.txt file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing.
+- The default query.txt file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing.
 
-On the dev branch, debug mode is enabled by default.
+- On the dev branch, debug mode is enabled by default.
 
-The default checklink is for the Classic Black Silver plate, which supports up to 7 characters.
+- The default checklink is for the Classic Black Silver plate, which supports up to 7 characters.
+
+- The default wait time is 3 seconds. Set it to whatever you want.
 
 ## UPCOMING FEATURES:
-NOTE: I probably won't implement these unless this promotion gets extended or revived (after the end of it). If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 
+NOTE: If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 
 
-- PUT IN UPCOMING FEATURES
+- Make settings configured by a config file https://github.com/bestadamdagoat/txVanityPlateChecker/issues/4
+- Make code cleaner https://github.com/bestadamdagoat/txVanityPlateChecker/issues/3
+- Fix formatting of the console log https://github.com/bestadamdagoat/txVanityPlateChecker/issues/2
 
 ## HOW TO USE THE BOT:
 NOTE: Make sure you are using Python 3.
@@ -32,10 +36,10 @@ NOTE: Make sure you are using Python 3.
      - If you can open up this file in CMD/Terminal, you do not need an explanation on how to get this thing fully setup.
 3. Go into the terminal and type `pip install -r requirements.txt`
 4. Edit the query.txt file to your liking
-     - Make sure to seperate all the plates by new lines. Also make sure all the queries fit the plate requirements.
+     - Make sure to separate all the plates by new lines. Also make sure all the queries fit the plate requirements.
 5. You are now ready to run the bot!
 
 ## COMMON ISSUES + FIXES
-NOTE: This will not always be up to date, and I will not add uncommon issues to this list. If you want an up-to-date list of fixes, click [here](https://github.com/bestadamdagoat/txVanityPlateBot/issues?q=is%3Aissue+is%3Aclosed).
+NOTE: This will not always be up-to-date, and I will not add uncommon issues to this list. If you want an up-to-date list of fixes, click [here](https://github.com/bestadamdagoat/txVanityPlateBot/issues?q=is%3Aissue+is%3Aclosed).
 
 - insert incapsula error
