@@ -16,12 +16,6 @@ debug = config["debug"]
 sleeptime = float(config["sleeptime"])
 checknum = 0
 
-def availableCheck():
-    if "not-available" in page:
-        print(Fore.RED + query + "is not available")
-    else:
-        print(Fore.GREEN + query + "is available")
-
 while True:
     query = queryfile.readline()
     if not query:
@@ -39,14 +33,16 @@ while True:
         print(page_soup)
     if "incapsula" in page:
         checknum = checknum + 1
-        print(Fore.RED, "incapsula block, strike " + checknum)
+        print(Fore.RED, "incapsula block, strike ", checknum)
         print(page_soup)
         if checknum := 3:
             quit(print("three strikes, quitting. (try refreshing your ip)"))
     else:
         checknum = 0
-        availableCheck()
-    # wait time to check if a plate is available, set it to whatever you want (in seconds)
+        if "not-available" in page:
+            print(Fore.RED + query, "is not available")
+        else:
+            print(Fore.GREEN + query, "is available")
     time.sleep(sleeptime)
 # explain why using BS in the readme
 # change test.py to main.py
