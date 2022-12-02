@@ -29,6 +29,8 @@ I know what you're thinking, "This guy is insane to be accessing an api without 
 
 - EXE releases will always be based off of the main branch.
 
+- There is a mini version that you can obtain from [here](https://github.com/bestadamdagoat/txVPC-lw).
+
 - Developer/Maintainer Notes:
      - Main Branch requires a PR and will only be updated after a few commits to dev. All important issues with main/important updates must require a PR. 
      - Dev Branch gets updated frequently. All updates/mini issue fixes must be pushed to dev first. 
@@ -36,7 +38,6 @@ I know what you're thinking, "This guy is insane to be accessing an api without 
 ## UPCOMING FEATURES:
 NOTE: If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 
 
-- Lightweight Version https://github.com/bestadamdagoat/txVanityPlateChecker/issues/13
 - Mini Mode https://github.com/bestadamdagoat/txVanityPlateChecker/issues/12
 - Export Available Plates to a TXT file https://github.com/bestadamdagoat/txVanityPlateChecker/issues/9
 
