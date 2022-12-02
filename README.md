@@ -45,7 +45,7 @@ NOTE: Make sure you are using Python 3.
      - Make sure to separate all the plates by new lines. Also make sure all the queries fit the plate requirements.
 5. Edit the config.ini file to your liking
    - Make sure you keep sleeptime in seconds and debug in true/false
-6. You are now ready to run the bot!
+6. You are now ready to run the bot! Make sure to run main.py. 
 
 ## COMMON ISSUES + FIXES:
 NOTE: This will not always be up-to-date, and I will not add uncommon issues to this list. If you want an up-to-date list of fixes, click [here](https://github.com/bestadamdagoat/txVanityPlateBot/issues?q=is%3Aissue+is%3Aclosed).
