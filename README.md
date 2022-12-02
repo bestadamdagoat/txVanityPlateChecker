@@ -27,9 +27,11 @@ I know what you're thinking, "This guy is insane to be accessing an api without 
 
 - The default wait time is 3 seconds. Set it to whatever you want in `config.ini` by editing `sleeptime`.
 
-- Maintainer Notes:
+- EXE releases will always be based off of the main branch.
+
+- Developer/Maintainer Notes:
      - Main Branch requires a PR and will only be updated after a few commits to dev. All important issues with main/important updates must require a PR. 
-     - Dev Branch gets updated frequently. All commits/issue fixes must be pushed to dev first. 
+     - Dev Branch gets updated frequently. All updates/mini issue fixes must be pushed to dev first. 
 
 ## UPCOMING FEATURES:
 NOTE: If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 
