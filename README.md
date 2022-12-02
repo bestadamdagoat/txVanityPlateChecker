@@ -2,7 +2,7 @@
 
 # ANNOUNCEMENT: Check out the plate Show and Tell thread [here](https://github.com/bestadamdagoat/txVanityPlateChecker/discussions/7)!
 
-# ![Plate Checker Logo](https://github.com/bestadamdagoat/txVanityPlateChecker/blob/format-fix/platechecker.png?raw=true)
+# ![Plate Checker Logo](https://github.com/bestadamdagoat/txVanityPlateChecker/blob/main/platechecker.png?raw=true)
 
 ## A bot that will check if vanity plates are available or taken, poorly coded in Python using urllib and BeautifulSoup.
 #### If this bot surprisingly worked for you, it would be cool if you donated to me. It would convince me to code better and actually be more commited to these projects. Check the sidebar for ways to donate to me.
