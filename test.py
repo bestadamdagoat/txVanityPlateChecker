@@ -1,5 +1,5 @@
-from bs4 import BeautifulSoup as soup
-from urllib.request import urlopen as uReq
+from bs4 import BeautifulSoup as Soup
+from urllib.request import urlopen as ureq
 from colorama import Fore, init
 import time
 from configparser import ConfigParser
@@ -11,16 +11,9 @@ config = config_object["CONFIG"]
 init(autoreset=True)
 checkurl = 'https://www.myplates.com/api/licenseplates/passenger/classic-black-silver/'
 queryfile = open('query.txt')
-# debug mode, set it to either true or false
 debug = config["debug"]
 sleeptime = float(config["sleeptime"])
 checknum = 0
-
-def availableCheck():
-    if "not-available" in page:
-        print(Fore.RED + query + "is not available")
-    else:
-        print(Fore.GREEN + query + "is available")
 
 while True:
     query = queryfile.readline()
@@ -28,25 +21,26 @@ while True:
         quit(print("end of file"))
     if debug == "true":
         print(query)
-    uClient = uReq(checkurl + query)
+    uClient = ureq(checkurl + query)
     if debug == "true":
         print(checkurl + query)
     page_html = uClient.read()
     uClient.close()
-    page_soup = soup(page_html, "html.parser")
+    page_soup = Soup(page_html, "html.parser")
     page = page_soup.get_text()
+    query = query.replace('\n', '')
     if debug == "true":
         print(page_soup)
     if "incapsula" in page:
         checknum = checknum + 1
-        print(Fore.RED, "incapsula block, strike " + checknum)
+        print(Fore.RED + "incapsula block, strike " + str(checknum))
         print(page_soup)
-        if checknum := 3:
-            quit(print("three strikes, quitting. (try refreshing your ip)"))
+        if checknum == 3:
+            quit(print(Fore.RED + "three strikes, quitting. (try refreshing your ip)"))
     else:
         checknum = 0
-        availableCheck()
-    # wait time to check if a plate is available, set it to whatever you want (in seconds)
+        if "not-available" in page:
+            print(Fore.RED + query + " is not available")
+        else:
+            print(Fore.GREEN + query + " is available")
     time.sleep(sleeptime)
-# explain why using BS in the readme
-# change test.py to main.py
