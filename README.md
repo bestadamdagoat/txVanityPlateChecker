@@ -14,6 +14,8 @@ Basically what this bot does is:
 - Appends the next line to the [MyPlates API link](https://www.myplates.com/api/licenseplates/passenger/classic-black-silver/).
 - Opens the API link with urllib and reads the page using BeautifulSoup (explained later).
 - Checks if the plate is taken, available, or if you're being blocked by incapsula.
+- Exports all the available plates to a txt.
+- And does a lot more in the background.
 
 ## WHY URLLIB and BEAUTIFULSOUP?
 I know what you're thinking, "This guy is insane to be accessing an api without using requests!" And you'd be correct. The only problem is that Incapsula is really smart and blocks my requests. I spent such a long time figuring out how to bypass incapsula with requests, that I even quit on this project for a while because of how much time I was spending. I decided to try a different way as all my methods were not working (custom headers, cookies, etc.). I ended up figuring out that urllib was able to access the site without getting blocked. I then decided to use BeautifulSoup to parse the api, as it was easy for me to understand. Now I have this project. I feel like this workaround should not have worked, seeing [all](https://www.reddit.com/r/webscraping/comments/bpc8ix/any_option_to_bypass_incapsula/) the [other](https://stackoverflow.com/questions/71537488/i-cant-get-the-content-of-the-web-site) people who failed using this same workaround. But you know what they say, "If it ain't broke, don't fix it!"
@@ -32,6 +34,7 @@ I know what you're thinking, "This guy is insane to be accessing an api without 
      - Dev Branch gets updated frequently. All updates/mini issue fixes must be pushed to dev first. 
 
 ## CONFIG.INI
+- NOTE: Leaving any of these unset/incorrectly set will set the variables to their defaults.
 1. `debug`
     - Can be set to either `true` or `false`. Enables/disables debug mode, which outputs the checklink with the query, the page, and the query. The default setting for this is `false`.
 2. `sleeptime`
@@ -42,20 +45,20 @@ I know what you're thinking, "This guy is insane to be accessing an api without 
 ## UPCOMING FEATURES:
 NOTE: If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 
 
-- Mini Mode https://github.com/bestadamdagoat/txVanityPlateChecker/issues/12
-- Export Available Plates to a TXT file https://github.com/bestadamdagoat/txVanityPlateChecker/issues/9
+- Add Preset Lists https://github.com/bestadamdagoat/txVanityPlateChecker/issues/26
+- Update Checker https://github.com/bestadamdagoat/txVanityPlateChecker/issues/25
+- Make the Program Into an Executable https://github.com/bestadamdagoat/txVanityPlateChecker/issues/5 
 
 ## HOW TO USE THE BOT:
 NOTE: Make sure you are using Python 3.
 1. Clone the repository
-     - You can do this by going to Code (the green button) and either downloading this repo as a zip (make sure to unzip it) or doing it the cool way and cloning with Git.
-2. Open up the file in your favorite IDE (like PyCharm or VScode)
+     - Or download the zip using [this link](https://github.com/bestadamdagoat/txVanityPlateChecker/archive/refs/heads/main.zip).
+2. Open up the folder in your favorite IDE (like PyCharm or VScode)
      - If you can open up this file in CMD/Terminal, you do not need an explanation on how to get this thing fully setup.
 3. Go into the terminal and type `pip install -r requirements.txt`
-4. Edit the query.txt file to your liking
+4. Edit the `query.txt` file to your liking
      - Make sure to separate all the plates by new lines. Also make sure all the queries fit the plate requirements.
-5. Edit the config.ini file to your liking
-   - Make sure you keep sleeptime in seconds and debug in true/false
+5. Edit the `config.ini` file to your liking
 6. You are now ready to run the bot! Make sure to run `main.py`. 
 
 ## COMMON ISSUES + FIXES:
