@@ -19,19 +19,25 @@ Basically what this bot does is:
 I know what you're thinking, "This guy is insane to be accessing an api without using requests!" And you'd be correct. The only problem is that Incapsula is really smart and blocks my requests. I spent such a long time figuring out how to bypass incapsula with requests, that I even quit on this project for a while because of how much time I was spending. I decided to try a different way as all my methods were not working (custom headers, cookies, etc.). I ended up figuring out that urllib was able to access the site without getting blocked. I then decided to use BeautifulSoup to parse the api, as it was easy for me to understand. Now I have this project. I feel like this workaround should not have worked, seeing [all](https://www.reddit.com/r/webscraping/comments/bpc8ix/any_option_to_bypass_incapsula/) the [other](https://stackoverflow.com/questions/71537488/i-cant-get-the-content-of-the-web-site) people who failed using this same workaround. But you know what they say, "If it ain't broke, don't fix it!"
 
 ## NOTES: 
-- The default `query.txt` file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing.
+- The default `query.txt` file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing and open up an issue with a log from the console.
 
 - The default checklink is for the Classic Black Silver plate, which supports up to 7 characters.
 
-- The default wait time is 3 seconds. Set it to whatever you want in `config.ini` by editing `sleeptime`.
-
 - EXE releases will always be based off of the main branch.
 
-- There is a mini version that you can obtain from [here](https://github.com/bestadamdagoat/txVPC-lw).
+- There is a lightweight version that you can obtain from [here](https://github.com/bestadamdagoat/txVPC-lw).
 
 - Developer/Maintainer Notes:
      - Main Branch requires a PR and will only be updated after a few commits to dev. All important issues with main/important updates must require a PR. 
      - Dev Branch gets updated frequently. All updates/mini issue fixes must be pushed to dev first. 
+
+## CONFIG.INI
+1. `debug`
+    - Can be set to either `true` or `false`. Enables/disables debug mode, which outputs the checklink with the query, the page, and the query. The default setting for this is `false`.
+2. `sleeptime`
+    - Can be set to any time in seconds (ex. `3`, `7`, `1`). The default setting for this is `3`.
+3. `minimode`
+    - Can be set to either `true` or `false`. Enables/disables mini mode, which disables output of not-available plates. The default setting for this is `false`.
 
 ## UPCOMING FEATURES:
 NOTE: If you want to see the latest planned features/progress on them, go to the Issues tab and sort by the tag [enhancement](https://github.com/bestadamdagoat/txVanityPlateChecker/labels/enhancement). 

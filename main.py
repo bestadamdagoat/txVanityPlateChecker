@@ -12,6 +12,7 @@ init(autoreset=True)
 checkurl = 'https://www.myplates.com/api/licenseplates/passenger/classic-black-silver/'
 queryfile = open('query.txt')
 debug = config["debug"]
+minimode = config["minimode"]
 sleeptime = float(config["sleeptime"])
 checknum = 0
 
@@ -19,28 +20,29 @@ while True:
     query = queryfile.readline()
     if not query:
         quit(print("end of file"))
-    if debug == "true":
-        print(query)
-    uClient = ureq(checkurl + query)
-    if debug == "true":
-        print(checkurl + query)
-    page_html = uClient.read()
-    uClient.close()
-    page_soup = Soup(page_html, "html.parser")
-    page = page_soup.get_text()
     query = query.replace('\n', '')
     if debug == "true":
-        print(page_soup)
+        print(query)
+    if debug == "true":
+        print(checkurl + query)
+    page = Soup(ureq(checkurl + query).read(),
+                "html.parser").get_text()
+    if debug == "true":
+        print(page)
     if "incapsula" in page:
         checknum = checknum + 1
         print(Fore.RED + "incapsula block, strike " + str(checknum))
-        print(page_soup)
+        print(page)
         if checknum == 3:
             quit(print(Fore.RED + "three strikes, quitting. (try refreshing your ip)"))
     else:
         checknum = 0
-        if "not-available" in page:
-            print(Fore.RED + query + " is not available")
+        if '"available' in page:
+            if minimode == "false":
+                print(Fore.GREEN + query + " is available")
+            else:
+                print(query)
         else:
-            print(Fore.GREEN + query + " is available")
+            if minimode == "false":
+                print(Fore.RED + query + " is not available")
     time.sleep(sleeptime)
