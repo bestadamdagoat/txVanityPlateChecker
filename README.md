@@ -21,8 +21,6 @@ I know what you're thinking, "This guy is insane to be accessing an api without 
 ## NOTES: 
 - The default `query.txt` file will contain random plates that are available and not available. If every plate is coming up as either available/not-available, go into the main.py and set debug mode to true to get a further insight into what the bot is seeing.
 
-- On the dev branch, debug mode is enabled by default.
-
 - The default checklink is for the Classic Black Silver plate, which supports up to 7 characters.
 
 - The default wait time is 3 seconds. Set it to whatever you want in `config.ini` by editing `sleeptime`.
