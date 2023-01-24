@@ -16,7 +16,7 @@ def writeconfig(variable, setting):
 def errorprocess(errormsg):
     print(Fore.RED + errormsg)
     time.sleep(2)
-    print(Fore.RED + "Quitting, restart the script.")
+    print(f"{Fore.RED}Quitting, restart the script.")
     quit(time.sleep(2))
 
 
@@ -32,11 +32,10 @@ if os.path.isfile("available-plates.txt"):
         continuewithprogram = input()
         if continuewithprogram.lower() not in ('y', 'n'):
             continue
+        if continuewithprogram.lower() == "y":
+            break
         else:
-            if continuewithprogram.lower() == "y":
-                break
-            else:
-                quit()
+            quit()
 
 logging.basicConfig(filename="available-plates.txt", format='%(message)s', filemode='w')
 logger = logging.getLogger()
@@ -58,17 +57,23 @@ minimode = config["minimode"]
 try:
     sleeptime = float(config["sleeptime"])
 except ValueError:
-    print(Fore.RED + "Please specify sleeptime in seconds (ex. 3) next time. Defaulting to 3.")
+    print(
+        f"{Fore.RED}Please specify sleeptime in seconds (ex. 3) next time. Defaulting to 3."
+    )
     writeconfig("sleeptime", "3")
     sleeptime = float(config["sleeptime"])
     time.sleep(3)
 if debug.lower() not in ("false", "true"):
-    print(Fore.RED + "Please specify if debug is true or false next time. Defaulting to false.")
+    print(
+        f"{Fore.RED}Please specify if debug is true or false next time. Defaulting to false."
+    )
     writeconfig("debug", "false")
     debug = config["debug"]
     time.sleep(3)
 if minimode.lower() not in ("false", "true"):
-    print(Fore.RED + "Please specify if minimode is true or false next time. Defaulting to false.")
+    print(
+        f"{Fore.RED}Please specify if minimode is true or false next time. Defaulting to false."
+    )
     writeconfig("minimode", "false")
     minimode = config["minimode"]
     time.sleep(3)
@@ -95,20 +100,18 @@ while True:
     debugprint(page)
     if "incapsula" in page:
         checknum = checknum + 1
-        print(Fore.RED + "Incapsula block, strike " + str(checknum))
+        print(f"{Fore.RED}Incapsula block, strike {str(checknum)}")
         print(page)
         if checknum == 3:
-            quit(print(Fore.RED + "Three strikes, quitting. (try refreshing your ip)"))
+            quit(print(f"{Fore.RED}Three strikes, quitting. (try refreshing your ip)"))
     else:
         checknum = 0
         if '"available' in page:
             if minimode == "false":
                 print(Fore.GREEN + query + " is available")
-                logger.info(query)
             else:
                 print(query)
-                logger.info(query)
-        else:
-            if minimode == "false":
-                print(Fore.RED + query + " is not available")
+            logger.info(query)
+        elif minimode == "false":
+            print(Fore.RED + query + " is not available")
     time.sleep(sleeptime)
