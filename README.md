@@ -47,7 +47,6 @@ NOTE: If you want to see the latest planned features/progress on them, go to the
 
 - Add Preset Lists https://github.com/bestadamdagoat/txVanityPlateChecker/issues/26
 - Update Checker https://github.com/bestadamdagoat/txVanityPlateChecker/issues/25
-- Make the Program Into an Executable https://github.com/bestadamdagoat/txVanityPlateChecker/issues/5 
 
 ## HOW TO USE THE BOT:
 NOTE: Make sure you are using Python 3.
@@ -59,7 +58,13 @@ NOTE: Make sure you are using Python 3.
 4. Edit the `query.txt` file to your liking
      - Make sure to separate all the plates by new lines. Also make sure all the queries fit the plate requirements.
 5. Edit the `config.ini` file to your liking
-6. You are now ready to run the bot! Make sure to run `main.py`. 
+6. You are now ready to run the bot! Make sure to run `main.py`.
+
+OR
+
+1. Download the EXE from the [releases tab](https://github.com/bestadamdagoat/txVanityPlateChecker/releases/latest)
+2. Make a `query.txt` and `config.ini` file in the same directory as the EXE
+3. Run the EXE
 
 ## COMMON ISSUES + FIXES:
 NOTE: This will not always be up-to-date, and I will not add uncommon issues to this list. If you want an up-to-date list of fixes, click [here](https://github.com/bestadamdagoat/txVanityPlateBot/issues?q=is%3Aissue+is%3Aclosed).
