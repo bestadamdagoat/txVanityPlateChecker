@@ -1,6 +1,6 @@
 <div align="center">
 
-# ANNOUNCEMENT: Check out the plate Show and Tell thread [here](https://github.com/bestadamdagoat/txVanityPlateChecker/discussions/7)!
+# ANNOUNCEMENT: Join the Discord server [here](https://discord.gg/8fpAGnyqgW)
 
 # ![Plate Checker Logo](https://github.com/bestadamdagoat/txVanityPlateChecker/blob/main/platechecker.png?raw=true)
 
