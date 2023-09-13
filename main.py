@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup as Soup
 from urllib.request import urlopen as ureq
 from colorama import Fore, init
 import time
@@ -95,10 +94,9 @@ while True:
     query = query.replace('\n', '')
     debugprint(query)
     debugprint(checkurl + query)
-    page = Soup(ureq(checkurl + query).read(),
-                "html.parser").get_text()
+    page = ureq(checkurl + query).read()
     debugprint(page)
-    if "incapsula" in page:
+    if b"incapsula" in page:
         checknum = checknum + 1
         print(f"{Fore.RED}Incapsula block, strike {str(checknum)}")
         print(page)
@@ -106,7 +104,7 @@ while True:
             quit(print(f"{Fore.RED}Three strikes, quitting. (try refreshing your ip)"))
     else:
         checknum = 0
-        if '"available' in page:
+        if b'"available' in page:
             if minimode == "false":
                 print(Fore.GREEN + query + " is available")
             else:
